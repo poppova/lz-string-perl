@@ -1,0 +1,6 @@
+Revision history for Compress::LZString
+
+1.44  Sat Jun  5 20:57:57 2021
+    - Initial distiribution for CPAN.
+    - Integrated lastest lz-string source. (v1.4.4)
+
