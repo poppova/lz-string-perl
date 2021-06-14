@@ -1,18 +1,27 @@
+use 5.006;
 use strict;
 use warnings;
 
 use Test;
 use Compress::LZString qw/:all/;
 
-BEGIN { plan tests => 5 };
+BEGIN { plan tests => 6 };
 
+# ascii
+my $ascii = `$^X -V`;
+$ascii =~ s/[^\x00-\x7f]//gs;
+
+skip($]<5.010, $ascii, decompress(compress($ascii)));
+ok  (          $ascii, decompress_b64(compress_b64($ascii)));
+ok  (          $ascii, decompress_b64_safe(compress_b64_safe($ascii)));
+
+# unicode
 local $/ = undef;
-my $text = <DATA>;
-ok($text, decompress(compress($text)));
-ok($text, decompress_b64(compress_b64($text)));
-ok($text, decompress_b64_safe(compress_b64_safe($text)));
-ok($text, decompressFromBase64(compressToBase64($text)));
-ok($text, decompressFromEncodedURIComponent(compressToEncodedURIComponent($text)));
+my $unicode = <DATA>;
+
+skip($]<5.010, $unicode, decompress(compress($unicode)));
+skip($]<5.008, $unicode, decompress_b64(compress_b64($unicode)));
+skip($]<5.008, $unicode, decompress_b64_safe(compress_b64_safe($unicode)));
 
 __DATA__
 Měsíčku na nebi hlubokém,

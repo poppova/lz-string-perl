@@ -6,7 +6,7 @@ my %make = (
     NAME              => 'Compress::LZString',
     VERSION_FROM      => 'lib/Compress/LZString.pm',
     ABSTRACT_FROM     => 'lib/Compress/LZString.pm',
-    MIN_PERL_VERSION  => '5.006',
+    MIN_PERL_VERSION  => '5.006002',
 
     META_MERGE => {
         "meta-spec" => { version => 2 },
