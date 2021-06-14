@@ -16,6 +16,9 @@ my %make = (
                 url  => 'git://github.com/poppova/lz-string-perl.git',
                 web  => 'https://github.com/poppova/lz-string-perl',
             },
+            bugtracker => {
+                web  => 'https://github.com/poppova/lz-string-perl/issues',
+            },
         },
     },
     LICENSE           => 'perl',

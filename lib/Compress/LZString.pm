@@ -7,7 +7,7 @@ use warnings;
 # old perl supresses malformed utf-8-strict characters like unpaired surrogate
 no if $] < 5.014, warnings => qw/utf8/;
 
-$Compress::LZString::VERSION = '1.44';
+$Compress::LZString::VERSION = '1.4401';
  
 BEGIN {
   use Exporter( );
