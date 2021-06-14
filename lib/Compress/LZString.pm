@@ -97,7 +97,7 @@ sub _compress {
 
     if (defined $context_dictionaryToCreate{$context_w})
     {
-      if (ord substr $context_w,0,1 < 256)
+      if ((ord substr $context_w,0,1) < 256)
       {
         foreach (1..$context_numBits)
         {
@@ -188,7 +188,7 @@ sub _compress {
   {
     if (defined $context_dictionaryToCreate{$context_w})
     {
-      if (ord substr $context_w,0,1 < 256)
+      if ((ord substr $context_w,0,1) < 256)
       {
         foreach (1..$context_numBits)
         {
